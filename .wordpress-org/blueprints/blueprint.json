@@ -1,0 +1,48 @@
+{
+  "landingPage": "/wp-admin/admin.php?page=wc-settings&tab=germanized",
+  "preferredVersions": {
+    "php": "8.1",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "phpExtensionBundles": [
+    "kitchen-sink"
+  ],
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "woocommerce_default_country": "DE:BE",
+        "woocommerce_store_city": "Berlin",
+        "woocommerce_store_postcode": "12207"
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org\/plugins",
+        "slug": "woocommerce"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org\/plugins",
+        "slug": "woocommerce-germanized"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "login",
+      "username": "admin",
+      "password": "password"
+    }
+  ]
+}
